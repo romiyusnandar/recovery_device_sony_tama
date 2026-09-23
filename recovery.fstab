@@ -46,7 +46,7 @@ system_ext                                              /system_ext             
 product                                                 /product                  ext4    ro,barrier=1,discard                                 wait,slotselect,logical,first_stage_mount,display=Product,backup=1,wipeingui
 odm                                                     /odm                      ext4    ro,barrier=1,discard                                 wait,slotselect,logical,first_stage_mount,display=ODM,backup=1,wipeingui
 vendor                                                  /vendor                   ext4    ro,barrier=1,discard                                 wait,slotselect,logical,first_stage_mount,display=Vendor,backup=1,wipeingui
-/dev/block/bootdevice/by-name/oem                       /oem                      ext4    ro,barrier=1,discard                                 wait,slotselect,display=OEM,backup=1
+# oem backs part of the retrofit super, so it is not a mountable filesystem.
 
 /dev/block/bootdevice/by-name/userdata                  /data                     ext4    noatime,nosuid,nodev,barrier=1,noauto_da_alloc,discard wait,check,fileencryption=ice,quota,reservedsize=128M
 /dev/block/bootdevice/by-name/userdata                  /data                     f2fs    noatime,nosuid,nodev,discard                         wait,check,fileencryption=ice,quota,reservedsize=128M
