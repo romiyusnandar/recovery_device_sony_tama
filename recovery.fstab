@@ -41,12 +41,12 @@
 /dev/block/bootdevice/by-name/dtbo                      /dtbo                     emmc    defaults                                             slotselect,display=DTBO,backup=1,flashimg=1
 /dev/block/bootdevice/by-name/vbmeta                    /vbmeta                   emmc    defaults                                             slotselect,display=VBMeta,backup=1,flashimg=1
 
-/dev/block/bootdevice/by-name/system                    /system                   ext4    ro,barrier=1,discard                                 wait,slotselect,display=System,backup=1,wipeingui
-/dev/block/bootdevice/by-name/system                    /system_image             emmc    defaults                                             wait,slotselect,display="System Image",backup=1,flashimg=1
-/dev/block/bootdevice/by-name/vendor                    /vendor                   ext4    ro,barrier=1,discard                                 wait,slotselect,display=Vendor,backup=1,wipeingui
-/dev/block/bootdevice/by-name/vendor                    /vendor_image             emmc    defaults                                             wait,slotselect,display="Vendor Image",backup=1,flashimg=1
-/dev/block/bootdevice/by-name/oem                       /oem                      ext4    ro,barrier=1,discard                                 wait,slotselect,display=OEM,backup=1,wipeingui
-/dev/block/bootdevice/by-name/oem                       /oem_image                emmc    defaults                                             wait,slotselect,display="OEM Image",backup=1,flashimg=1
+system                                                  /system                   ext4    ro,barrier=1,discard                                 wait,slotselect,logical,first_stage_mount,display=System,backup=1,wipeingui
+system_ext                                              /system_ext               ext4    ro,barrier=1,discard                                 wait,slotselect,logical,first_stage_mount,display=System_ext,backup=1,wipeingui
+product                                                 /product                  ext4    ro,barrier=1,discard                                 wait,slotselect,logical,first_stage_mount,display=Product,backup=1,wipeingui
+odm                                                     /odm                      ext4    ro,barrier=1,discard                                 wait,slotselect,logical,first_stage_mount,display=ODM,backup=1,wipeingui
+vendor                                                  /vendor                   ext4    ro,barrier=1,discard                                 wait,slotselect,logical,first_stage_mount,display=Vendor,backup=1,wipeingui
+# oem backs part of the retrofit super, so it is not a mountable filesystem.
 
 /dev/block/bootdevice/by-name/userdata                  /data                     ext4    noatime,nosuid,nodev,barrier=1,noauto_da_alloc,discard wait,check,fileencryption=ice,quota,reservedsize=128M
 /dev/block/bootdevice/by-name/userdata                  /data                     f2fs    noatime,nosuid,nodev,discard                         wait,check,fileencryption=ice,quota,reservedsize=128M
