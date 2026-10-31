@@ -48,8 +48,8 @@ odm                                                     /odm                    
 vendor                                                  /vendor                   ext4    ro,barrier=1,discard                                 wait,slotselect,logical,first_stage_mount,display=Vendor,backup=1,wipeingui
 # oem backs part of the retrofit super, so it is not a mountable filesystem.
 
-/dev/block/bootdevice/by-name/userdata                  /data                     ext4    noatime,nosuid,nodev,barrier=1,noauto_da_alloc,discard wait,check,fileencryption=ice,quota,reservedsize=128M
-/dev/block/bootdevice/by-name/userdata                  /data                     f2fs    noatime,nosuid,nodev,discard                         wait,check,fileencryption=ice,quota,reservedsize=128M
+/dev/block/bootdevice/by-name/userdata                  /data                     ext4    noatime,nosuid,nodev,barrier=1,noauto_da_alloc,discard wait,check,fileencryption=aes-256-xts:aes-256-cts:v2,quota,reservedsize=128M
+/dev/block/bootdevice/by-name/userdata                  /data                     f2fs    noatime,nosuid,nodev,discard                         wait,check,fileencryption=aes-256-xts:aes-256-cts:v2,quota,reservedsize=128M
 
 #/devices/platform/soc/8804000.sdhci/mmc_host/*          /sd-ext                   auto    defaults                                             wait,voldmanaged=sd-ext:1,encryptable=userdata
 #/devices/platform/soc/1da4000.ufshc_card/host/*         /sd-ext                   auto    defaults                                             wait,voldmanaged=sd-ext:1,encryptable=userdata
