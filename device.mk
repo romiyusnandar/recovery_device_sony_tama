@@ -46,11 +46,6 @@ PRODUCT_PACKAGES += \
     fastbootd
 PRODUCT_PROPERTY_OVERRIDES += ro.fastbootd.available=true
 
-# qcom decryption
-PRODUCT_PACKAGES += \
-    qcom_decrypt \
-    qcom_decrypt_fbe
-
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(COMMON_PATH)
