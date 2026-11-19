@@ -6,3 +6,4 @@
 # binary and init.rc will not follow symlinks.
 
 setenforce 0
+resetprop ro.build.date.utc 0
