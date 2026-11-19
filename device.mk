@@ -55,9 +55,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(COMMON_PATH)
 
-# Copy modules into initramfs /sbin
-PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*.ko,$(COMMON_PATH)/prebuilt/modules,$(TARGET_COPY_OUT_RECOVERY)/root/sbin)
-
 # Prebuit files for recovery ramdisk
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(COMMON_PATH)/recovery/root,$(TARGET_COPY_OUT_RECOVERY)/root)

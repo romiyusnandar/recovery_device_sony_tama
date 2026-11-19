@@ -36,19 +36,20 @@ on init
 #    setprop prepdecrypt.setpatch true
 
 on init
-    write /sys/class/backlight/panel0-backlight/brightness 200
+    write /sys/class/backlight/panel0-backlight/brightness 1024
 
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
 
+on boot
+    write /sys/devices/virtual/input/clearpad/post_probe_start 1
+    start preptouch
+
 on late-init
     start boot-hal-1-0
     start health-hal-2-0
     start set_permissive
-
-on post-fs-data
-    start preptouch
 
 service set_permissive /system/bin/permissive.sh
     disabled

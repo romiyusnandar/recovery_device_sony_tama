@@ -1,4 +1,4 @@
-#!/sbin/sh
+#!/system/bin/sh
 
 # We use this shell script because the script will follow symlinks and
 # different trees will use different binaries to supply the setenforce
