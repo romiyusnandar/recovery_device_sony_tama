@@ -47,24 +47,18 @@ TARGET_USES_UEFI := true
 
 # Kernel
 BOARD_KERNEL_CMDLINE := \
+    twrpfastboot=1 \
     androidboot.selinux=permissive \
     androidboot.hardware=qcom \
     androidboot.usbcontroller=a600000.dwc3 \
-    androidboot.bootdevice=1d84000.ufshc \
     androidboot.boot_devices=soc/1d84000.ufshc \
     androidboot.super_partition=system \
     androidboot.dynamic_partitions=true \
     androidboot.dynamic_partitions_retrofit=true \
     lpm_levels.sleep_disabled=1 \
-    msm_rtb.filter=0x3F \
-    service_locator.enable=1 \
-    coherent_pool=8M \
     androidboot.configfs=true \
     loop.max_part=16 \
-    kpti=0 \
-    printk.devkmsg=on \
-    msm_drm.dsi_display0=somc,default_cmd_panel:config0 \
-    twrpfastboot=1
+    msm_drm.dsi_display0=somc,default_cmd_panel:config0
 
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_PAGESIZE := 4096
